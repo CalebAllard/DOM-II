@@ -15,7 +15,9 @@ nav.addEventListener('click', e =>{
     e.target.style.background = "brown";
 });
 
-// * [ ] `mouseover`
+window.addEventListener('wheel',(e) => { 
+    document.querySelector('p').style.color = 'purple';
+ });
 
 const images = document.querySelectorAll('img');
 console.log(images);
@@ -35,8 +37,8 @@ logoHeading.addEventListener('dblclick', e => {
     });
 
 
-const thisWindow = document.querySelector("body");
-thisWindow.addEventListener('keydown', e => {
+const thisBody = document.querySelector("body");
+thisBody.addEventListener('keydown', e => {
     e.target.style.background = "green";
 })
 
@@ -44,6 +46,18 @@ thisWindow.addEventListener('keydown', e => {
 
 // * [ ] `load`
 
-// * [ ] `resize`
-// * [ ] `scroll`
+window.addEventListener('resize', e=> {
+    thisBody.style.background = 'blue';
+});
 
+
+window.addEventListener('scroll', e => {
+    document.querySelector('nav').style.display = 'none';
+});
+
+window.addEventListener('mousedown', e => {
+    console.log(`Say good bye to ${e.target}`);
+});
+window.addEventListener('mouseup', e => {
+    e.target.style.display = 'none';
+});
